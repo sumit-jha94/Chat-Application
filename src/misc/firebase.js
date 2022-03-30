@@ -1,4 +1,6 @@
 import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
 
 // Taking the config file from Firebas>> Project Setting >>
 const config = {
@@ -13,4 +15,11 @@ const config = {
 
 // using this app varible we can use any serices of firebase
 const app = firebase.initializeApp(config);
+
+// exporting auth object to intereact with firebase.
+// It will give auth object to intereact with database
+export const auth = app.auth();
+
+// exporting database to use 
+export const database = app.database();
 
